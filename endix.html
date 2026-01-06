@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بشار فرحان| Freelancer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+        
+        :root {
+            primary: #6366f1;
+            secondary: #a855f7;
+            dark: #0f172a;
+        }
+
+        body { 
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text { 
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.15), transparent);
+        }
+
+        .skill-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: var(--primary);
+        }
+
+        .skill-bar-bg {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .contact-icon {
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover .contact-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--primary);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text">بشارفرحان</div>
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="#about" class="hover:text-indigo-600 transition">نبذة عني</a>
+                <a href="#skills" class="hover:text-indigo-600 transition">المهارات</a>
+                <a href="#contact" class="hover:text-indigo-600 transition">تواصل معي</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20 hero-gradient relative">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-left">
+                <h2 class="text-indigo-600 font-bold mb-4 tracking-wider">مرحباً بك في عالمي الرقمي</h2>
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                    أنا <span class="gradient-text">بشار فرحان</span>
+                </h1>
+                <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+                    مطور واجهات أمامية شغوف، متخصص في تحويل الأفكار الإبداعية إلى تجارب رقمية تفاعلية باستخدام أحدث التقنيات.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="px-8 py-4 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
+                        تواصل معي
+                    </a>
+                    <a href="#skills" class="px-8 py-4 border-2 border-slate-200 rounded-xl font-bold hover:border-indigo-600 hover:text-indigo-600 transition">
+                        عرض المهارات
+                    </a>
+                </div>
+            </div>
+            <div class="relative" data-aos="zoom-in">
+                <div class="w-64 h-64 md:w-80 md:h-80 mx-auto relative z-10">
+                    <img src="  شعار.jpg"
+                         alt="عبد الرحمن المغربي" 
+                         class="rounded-3xl shadow-2xl object-cover w-full h-full border-8 border-white">
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-indigo-100 rounded-full -z-10 animate-pulse"></div>
+                    <div class="absolute -top-6 -left-6 w-20 h-20 bg-purple-100 rounded-full -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 section-title" data-aos="fade-up">نبذة عني</h2>
+                <p class="text-lg text-slate-600 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                    شغوف بتكنولوجيا الإنترنت، لدي خبرة في استخدام أدوات الذكاء الاصطناعي في تطوير الويب. عملت على تصميم وتطوير عدة مشاريع تفاعلية باستخدام تقنيات حديثة، وأسعى دائماً لتعلم كل ما هو جديد في عالم الويب 3 والبلوكتشين.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-slate-50 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="layout"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">تطوير الواجهات</h3>
+                    <p class="text-slate-600">بناء واجهات مستخدم سريعة، متجاوبة، وجذابة بصرياً.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">إدارة البيانات</h3>
+                    <p class="text-slate-600">التعامل مع Supabase و Firebase لربط البيانات بالواجهات.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-2xl" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <i data-feather="cpu"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">أدوات الذكاء الاصطناعي</h3>
+                    <p class="text-slate-600">توظيف تقنيات AI لتسريع عملية التطوير وتحسين الجودة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-center section-title" data-aos="fade-up">المهارات والخبرات</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Technical Skills -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                        <i data-feather="code" class="text-indigo-600"></i> المهارات التقنية
+                    </h3>
+                    
+                    <div class="skill-item" data-aos="fade-right">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold">HTML/CSS & Tailwind</span>
+                            <span class="text-slate-500">85%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-aos="fade-right" data-aos-delay="100">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold">JavaScript (ES6+)</span>
+                            <span class="text-slate-500">70%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-aos="fade-right" data-aos-delay="200">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold">React & Vue.js</span>
+                            <span class="text-slate-500">60%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="60%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-aos="fade-right" data-aos-delay="300">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-bold">Node.js & Backend</span>
+                            <span class="text-slate-500">55%</span>
+                        </div>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar-fill" data-width="55%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Path -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <h3 class="text-2xl font-bold mb-8 flex items-center gap-2">
+                        <i data-feather="trending-up" class="text-purple-600"></i> مسار التعلم الحالي
+                    </h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-yellow-50 rounded-xl border border-yellow-100 text-center" data-aos="zoom-in">
+                            <div class="font-bold text-yellow-700">TypeScript</div>
+                            <div class="text-xs text-yellow-600 mt-1">قيد التطوير</div>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded-xl border border-blue-100 text-center" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="font-bold text-blue-700">Python</div>
+                            <div class="text-xs text-blue-600 mt-1">أساسيات</div>
+                        </div>
+                        <div class="p-4 bg-red-50 rounded-xl border border-red-100 text-center" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="font-bold text-red-700">Web3</div>
+                            <div class="text-xs text-red-600 mt-1">استكشاف</div>
+                        </div>
+                        <div class="p-4 bg-green-50 rounded-xl border border-green-100 text-center" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="font-bold text-green-700">SQL</div>
+                            <div class="text-xs text-green-600 mt-1">مستوى متوسط</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h4 class="font-bold mb-4">المهارات الشخصية</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-slate-100 rounded-full text-sm">حل المشكلات</span>
+                            <span class="px-4 py-2 bg-slate-100 rounded-full text-sm">العمل الجماعي</span>
+                            <span class="px-4 py-2 bg-slate-100 rounded-full text-sm">إدارة الوقت</span>
+                            <span class="px-4 py-2 bg-slate-100 rounded-full text-sm">التواصل الفعال</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-indigo-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-64 h-64 bg-purple-500 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">دعنا نعمل معاً</h2>
+                <p class="text-xl text-slate-400 mb-12" data-aos="fade-up" data-aos-delay="100">
+                    أبحث حالياً عن فرص عمل أو تدريب لتطوير مهاراتي والمساهمة في مشاريع مبتكرة.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-6 text-right">
+                    <a href="mailto:abdprincelove8@gmail.com" class="contact-link p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition group" data-aos="fade-right">
+                        <div class="flex items-center gap-4">
+                            <div class="contact-icon w-12 h-12 bg-indigo-500/20 text-indigo-400 rounded-xl flex items-center justify-center">
+                                <i data-feather="mail"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-slate-400">البريد الإلكتروني</div>
+                                <div class="font-bold">abdprincelove8@gmail.com</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="tel:+963936599006" class="contact-link p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition group" data-aos="fade-left">
+                        <div class="flex items-center gap-4">
+                            <div class="contact-icon w-12 h-12 bg-green-500/20 text-green-400 rounded-xl flex items-center justify-center">
+                                <i data-feather="phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-slate-400">رقم الهاتف</div>
+                                <div class="font-bold">+967774915887</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Abdoalmaghrebi" target="_blank" class="contact-link p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition group" data-aos="fade-right" data-aos-delay="100">
+                        <div class="flex items-center gap-4">
+                            <div class="contact-icon w-12 h-12 bg-slate-500/20 text-slate-300 rounded-xl flex items-center justify-center">
+                                <i data-feather="github"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-slate-400">GitHub</div>
+                                <div class="font-bold">Abdoalmaghrebi</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D8%B1%D8%AD%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8I-4b8b65203" target="_blank" class="contact-link p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition group" data-aos="fade-left" data-aos-delay="100">
+                        <div class="flex items-center gap-4">
+                            <div class="contact-icon w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center">
+                                <i data-feather="linkedin"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-slate-400">LinkedIn</div>
+                                <div class="font-bold">بشار فرحان</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-950 text-slate-500 text-center border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <p>© 2025 بشار فرحان. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Animate skill bars on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fill = entry.target.querySelector('.skill-bar-fill');
+                    if (fill) {
+                        fill.style.width = fill.getAttribute('data-width');
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.skill-item').forEach(item => observer.observe(item));
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
